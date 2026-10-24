@@ -19,7 +19,7 @@ echo [INFO] Installation et execution dans Ubuntu/WSL.
 echo [INFO] Codex CLI doit etre installe et connecte DANS WSL.
 echo.
 
-wsl.exe -e bash -lc "set -e; if ! command -v git >/dev/null 2>&1; then echo 'Git est requis dans WSL. Installe-le avec: sudo apt update ^&^& sudo apt install git'; exit 1; fi; if [ ! -d \"\$HOME/free-astra-win-upstream/.git\" ]; then git clone https://github.com/Zhao73/free-astra.git \"\$HOME/free-astra-win-upstream\"; else git -C \"\$HOME/free-astra-win-upstream\" pull --ff-only; fi; cd \"\$HOME/free-astra-win-upstream\"; python3 -m pip install --user zstandard; bash install.sh"
+wsl.exe -e bash -lc "set -e; if ! command -v git >/dev/null 2>&1; then echo 'Git est requis dans WSL. Installe-le avec sudo apt install git'; exit 1; fi; if [ ! -d \"$HOME/free-astra-win-upstream/.git\" ]; then git clone https://github.com/Zhao73/free-astra.git \"$HOME/free-astra-win-upstream\"; else git -C \"$HOME/free-astra-win-upstream\" pull --ff-only; fi; cd \"$HOME/free-astra-win-upstream\"; python3 -m pip install --user zstandard; bash install.sh"
 if errorlevel 1 (
   echo.
   echo [ERREUR] L'installation a echoue. Lis les messages WSL ci-dessus.
