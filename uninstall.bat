@@ -8,5 +8,5 @@ echo.
 choice /M "Continuer"
 if errorlevel 2 exit /b 0
 
-wsl.exe -e bash -lc "if [ -d \"\$HOME/free-astra-win-upstream\" ]; then cd \"\$HOME/free-astra-win-upstream\" && bash front-door.sh off && bash front-door.sh unservice; else echo 'Le dossier free-astra-win-upstream est introuvable.'; fi"
+wsl.exe -e bash -lc "if [ -d \"$HOME/free-astra-win-upstream\" ]; then cd \"$HOME/free-astra-win-upstream\" && bash front-door.sh off && bash front-door.sh unservice; else echo 'Le dossier free-astra-win-upstream est introuvable.'; fi"
 pause
